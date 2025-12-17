@@ -1,0 +1,15 @@
+{
+  "name": "hello-gen-image",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "gemini",
+    "chatgpt"
+  ],
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
