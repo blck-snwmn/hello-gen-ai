@@ -13,6 +13,9 @@
     },
     "chatgpt": {
       "name": "chatgpt",
+      "dependencies": {
+        "openai": "^6.14.0",
+      },
       "devDependencies": {
         "@types/bun": "latest",
       },
@@ -40,6 +43,8 @@
     "chatgpt": ["chatgpt@workspace:chatgpt"],
 
     "gemini": ["gemini@workspace:gemini"],
+
+    "openai": ["openai@6.14.0", "", { "peerDependencies": { "ws": "^8.18.0", "zod": "^3.25 || ^4.0" }, "optionalPeers": ["ws", "zod"], "bin": { "openai": "bin/cli" } }, "sha512-ZPD9MG5/sPpyGZ0idRoDK0P5MWEMuXe0Max/S55vuvoxqyEVkN94m9jSpE3YgNgz3WoESFvozs57dxWqAco31w=="],
 
     "typescript": ["typescript@5.9.3", "", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw=="],
 
