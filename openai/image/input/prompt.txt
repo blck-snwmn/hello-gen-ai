@@ -1,0 +1,22 @@
+Add digital noise artifacts to the banana. Keep the background unchanged.
+
+**Target:**
+- Apply effects ONLY to the banana itself
+- Background must remain exactly as-is
+
+**Effect (Medium Intensity):**
+- Visible RGB color separation/fringing along banana edges
+- Scattered pixel artifacts and small blocky glitches on the surface
+- A few noticeable horizontal glitch lines cutting through the banana
+- Some color distortion patches (shifted hues, not neon)
+
+**Intensity: MEDIUM**
+- The noise should be clearly visible, not hidden
+- Viewer notices something is wrong within a few seconds
+- Looks like a slightly corrupted image file
+- The banana shape is still clear, but obviously glitched
+
+**Balance:**
+- More than barely-visible, less than overwhelming
+- Digital artifact aesthetic, not destroyed image
+- Noticeable but not aggressive

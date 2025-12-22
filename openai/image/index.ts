@@ -4,14 +4,14 @@ import { readFile, writeFile } from "fs/promises";
 const client = new OpenAI();
 
 const prompt = await readFile("input/prompt.txt", "utf-8");
-const imageBuffer = await readFile("input/image.png");
+const imageBuffer = await readFile("input/banana.jpeg");
 
 console.log("Generating image with gpt-image-1.5...");
 console.log(`Prompt: ${prompt.slice(0, 100)}...`);
 
 const response = await client.images.edit({
   model: "gpt-image-1.5",
-  image: await toFile(imageBuffer, "image.png", { type: "image/png" }),
+  image: await toFile(imageBuffer, "banana.jpeg", { type: "image/jpeg" }),
   prompt,
   size: "1024x1024",
 });
