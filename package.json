@@ -3,8 +3,8 @@
   "type": "module",
   "private": true,
   "workspaces": [
-    "gemini",
-    "chatgpt"
+    "openai/*",
+    "google/*"
   ],
   "devDependencies": {
     "@types/bun": "latest"

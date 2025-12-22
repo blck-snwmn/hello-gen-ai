@@ -1,5 +1,5 @@
 {
-  "name": "chatgpt",
+  "name": "google-image",
   "module": "index.ts",
   "type": "module",
   "private": true,
@@ -8,8 +8,5 @@
   },
   "peerDependencies": {
     "typescript": "^5"
-  },
-  "dependencies": {
-    "openai": "^6.14.0"
   }
 }
