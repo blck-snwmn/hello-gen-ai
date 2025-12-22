@@ -1,15 +1,23 @@
-# chatgpt
+# OpenAI Image Editing
 
-To install dependencies:
+Edit images using OpenAI's gpt-image-1.5 model.
+
+## Setup
 
 ```bash
 bun install
 ```
 
-To run:
+Set your API key in `.env`:
+
+```
+OPENAI_API_KEY=your-api-key
+```
+
+## Usage
 
 ```bash
 bun run index.ts
 ```
 
-This project was created using `bun init` in bun v1.3.2. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+Output images are saved to `output/` directory.

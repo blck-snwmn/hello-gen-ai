@@ -1,15 +1,23 @@
-# gemini
+# Google Gemini Image Generation
 
-To install dependencies:
+Generate images using Google's gemini-3-pro-image-preview model.
+
+## Setup
 
 ```bash
 bun install
 ```
 
-To run:
+Set your API key in `.env`:
+
+```
+GOOGLE_API_KEY=your-api-key
+```
+
+## Usage
 
 ```bash
 bun run index.ts
 ```
 
-This project was created using `bun init` in bun v1.3.2. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+Output images are saved to `output/` directory.

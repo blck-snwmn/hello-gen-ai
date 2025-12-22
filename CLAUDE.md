@@ -43,3 +43,4 @@ hello-gen-image/
 ## Environment Variables
 
 - `OPENAI_API_KEY` - Required for OpenAI image generation
+- `GOOGLE_API_KEY` - Required for Google Gemini image generation
