@@ -34,3 +34,12 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 .DS_Store
 
 .vscode/
+
+# media input/output files
+**/input/*.mp3
+**/input/*.mp4
+**/input/*.m4a
+**/input/*.wav
+**/input/*.webm
+**/output/*
+!**/output/.gitkeep
