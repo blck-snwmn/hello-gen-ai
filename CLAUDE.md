@@ -2,9 +2,13 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Workflow Rules
+
+- When adding a new package or modality, update root README.md, root CLAUDE.md, and create package-level README.md as part of the task.
+
 ## Project Overview
 
-Bun monorepo for multi-modal AI image generation experiments. Organized by provider (openai, google) with sub-packages for different modalities (image).
+Bun monorepo for multi-modal AI experiments. Organized by provider (openai, google) with sub-packages for different modalities (image, transcription, tts).
 
 ## Commands
 
@@ -14,7 +18,10 @@ bun install
 
 # Run a specific package
 bun run openai/image/index.ts
+bun run openai/transcription/index.ts
 bun run google/image/index.ts
+bun run google/transcription/index.ts
+bun run google/tts/index.ts
 
 # Run tests
 bun test
@@ -23,13 +30,20 @@ bun test
 ## Architecture
 
 ```
-hello-gen-image/
+hello-gen-ai/
 ├── openai/
-│   └── image/          # OpenAI gpt-image-1.5 API integration
-│       └── index.ts    # Image editing with prompt from input/prompt.txt
+│   ├── image/            # OpenAI gpt-image-1.5 image editing
+│   │   └── index.ts
+│   └── transcription/    # OpenAI Whisper speech-to-text (SRT)
+│       └── index.ts
 ├── google/
-│   └── image/          # Google/Gemini image generation (placeholder)
-└── package.json        # Workspace root
+│   ├── image/            # Gemini gemini-3-pro-image-preview image generation
+│   │   └── index.ts
+│   ├── transcription/    # Gemini gemini-3-flash-preview speech-to-text (SRT)
+│   │   └── index.ts
+│   └── tts/              # Gemini gemini-2.5-flash-preview-tts text-to-speech
+│       └── index.ts
+└── package.json          # Workspace root
 ```
 
 ## Bun Runtime
@@ -42,5 +56,5 @@ hello-gen-image/
 
 ## Environment Variables
 
-- `OPENAI_API_KEY` - Required for OpenAI image generation
-- `GOOGLE_API_KEY` - Required for Google Gemini image generation
+- `OPENAI_API_KEY` - Required for OpenAI packages (image, transcription)
+- `GOOGLE_API_KEY` - Required for Google Gemini packages (image, transcription, tts)
