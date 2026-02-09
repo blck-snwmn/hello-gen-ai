@@ -19,8 +19,10 @@ bun install
 # Run a specific package
 bun run openai/image/index.ts
 bun run openai/transcription/index.ts
+bun run openai/diarization/index.ts
 bun run google/image/index.ts
 bun run google/transcription/index.ts
+bun run google/diarization/index.ts
 bun run google/tts/index.ts
 
 # Run tests
@@ -34,12 +36,16 @@ hello-gen-ai/
 ├── openai/
 │   ├── image/            # OpenAI gpt-image-1.5 image editing
 │   │   └── index.ts
-│   └── transcription/    # OpenAI Whisper speech-to-text (SRT)
+│   ├── transcription/    # OpenAI Whisper speech-to-text (SRT)
+│   │   └── index.ts
+│   └── diarization/      # OpenAI gpt-4o-transcribe-diarize speaker diarization
 │       └── index.ts
 ├── google/
 │   ├── image/            # Gemini gemini-3-pro-image-preview image generation
 │   │   └── index.ts
 │   ├── transcription/    # Gemini gemini-3-flash-preview speech-to-text (SRT)
+│   │   └── index.ts
+│   ├── diarization/      # Gemini gemini-3-flash-preview speaker diarization
 │   │   └── index.ts
 │   └── tts/              # Gemini gemini-2.5-flash-preview-tts text-to-speech
 │       └── index.ts
@@ -56,5 +62,5 @@ hello-gen-ai/
 
 ## Environment Variables
 
-- `OPENAI_API_KEY` - Required for OpenAI packages (image, transcription)
-- `GOOGLE_API_KEY` - Required for Google Gemini packages (image, transcription, tts)
+- `OPENAI_API_KEY` - Required for OpenAI packages (image, transcription, diarization)
+- `GOOGLE_API_KEY` - Required for Google Gemini packages (image, transcription, diarization, tts)
