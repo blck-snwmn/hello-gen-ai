@@ -32,19 +32,15 @@ for (const file of files) {
   const maxSize = 25 * 1024 * 1024; // 25MB
 
   if (fileSize > maxSize) {
-    console.error(
-      `Skipping ${file}: ${(fileSize / 1024 / 1024).toFixed(1)}MB exceeds 25MB limit`
-    );
-    console.error(
-      "Tip: extract audio first with `ffmpeg -i ${file} -vn -acodec aac output.m4a`\n"
-    );
+    console.error(`Skipping ${file}: ${(fileSize / 1024 / 1024).toFixed(1)}MB exceeds 25MB limit`);
+    console.error("Tip: extract audio first with `ffmpeg -i ${file} -vn -acodec aac output.m4a`\n");
     continue;
   }
 
   const buffer = await inputFile.bytes();
 
   console.log(
-    `Transcribing ${file} (${(fileSize / 1024 / 1024).toFixed(1)}MB) with gpt-4o-transcribe-diarize...`
+    `Transcribing ${file} (${(fileSize / 1024 / 1024).toFixed(1)}MB) with gpt-4o-transcribe-diarize...`,
   );
 
   const result = await client.audio.transcriptions.create({
@@ -68,10 +64,7 @@ for (const file of files) {
   }
 
   const baseName = file.slice(0, file.lastIndexOf("."));
-  const outputPath = join(
-    dir,
-    `output/${baseName}-${Bun.randomUUIDv7()}.json`
-  );
+  const outputPath = join(dir, `output/${baseName}-${Bun.randomUUIDv7()}.json`);
   await Bun.write(outputPath, JSON.stringify(diarized, null, 2));
   console.log(`\nSaved to ${outputPath}\n`);
 }

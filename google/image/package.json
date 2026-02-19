@@ -1,15 +1,15 @@
 {
   "name": "google-image",
-  "module": "index.ts",
-  "type": "module",
   "private": true,
+  "type": "module",
+  "module": "index.ts",
+  "dependencies": {
+    "@google/genai": "^1.34.0"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
   "peerDependencies": {
     "typescript": "^5"
-  },
-  "dependencies": {
-    "@google/genai": "^1.34.0"
   }
 }

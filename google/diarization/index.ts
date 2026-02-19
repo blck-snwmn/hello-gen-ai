@@ -95,10 +95,7 @@ for (const file of files) {
   }
 
   const baseName = file.slice(0, file.lastIndexOf("."));
-  const outputPath = join(
-    dir,
-    `output/${baseName}-${Bun.randomUUIDv7()}.json`
-  );
+  const outputPath = join(dir, `output/${baseName}-${Bun.randomUUIDv7()}.json`);
   await Bun.write(outputPath, JSON.stringify(parsed, null, 2));
   console.log(`\nSaved to ${outputPath}\n`);
 }

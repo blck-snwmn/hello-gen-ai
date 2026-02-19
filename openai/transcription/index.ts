@@ -32,7 +32,9 @@ for (const file of files) {
   const maxSize = 25 * 1024 * 1024; // 25MB
 
   if (fileSize > maxSize) {
-    console.error(`Skipping ${file}: ${(fileSize / 1024 / 1024).toFixed(1)}MB exceeds Whisper's 25MB limit`);
+    console.error(
+      `Skipping ${file}: ${(fileSize / 1024 / 1024).toFixed(1)}MB exceeds Whisper's 25MB limit`,
+    );
     console.error("Tip: extract audio first with `ffmpeg -i ${file} -vn -acodec aac output.m4a`\n");
     continue;
   }

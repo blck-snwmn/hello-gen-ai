@@ -6,8 +6,17 @@
     "openai/*",
     "google/*"
   ],
+  "scripts": {
+    "lint": "oxlint --type-aware --type-check --deny-warnings .",
+    "lint:fix": "oxlint --type-aware --type-check --deny-warnings . --fix",
+    "fmt": "oxfmt --write openai/ google/",
+    "fmt:check": "oxfmt --check openai/ google/"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "oxlint": "^1.48.0",
+    "oxlint-tsgolint": "^0.14.1",
+    "oxfmt": "^0.33.0"
   },
   "peerDependencies": {
     "typescript": "^5"

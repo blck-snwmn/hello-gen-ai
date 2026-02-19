@@ -29,6 +29,14 @@ bun run google/video/index.ts
 
 # Run tests
 bun test
+
+# Lint (oxlint with type-aware checking)
+bun run lint
+bun run lint:fix
+
+# Format (oxfmt)
+bun run fmt
+bun run fmt:check
 ```
 
 ## Architecture
