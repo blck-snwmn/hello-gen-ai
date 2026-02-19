@@ -8,7 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Bun monorepo for multi-modal AI experiments. Organized by provider (openai, google) with sub-packages for different modalities (image, transcription, tts).
+Bun monorepo for multi-modal AI experiments. Organized by provider (openai, google) with sub-packages for different modalities (image, transcription, tts, video).
 
 ## Commands
 
@@ -20,10 +20,12 @@ bun install
 bun run openai/image/index.ts
 bun run openai/transcription/index.ts
 bun run openai/diarization/index.ts
+bun run openai/video/index.ts
 bun run google/image/index.ts
 bun run google/transcription/index.ts
 bun run google/diarization/index.ts
 bun run google/tts/index.ts
+bun run google/video/index.ts
 
 # Run tests
 bun test
@@ -38,7 +40,9 @@ hello-gen-ai/
 │   │   └── index.ts
 │   ├── transcription/    # OpenAI Whisper speech-to-text (SRT)
 │   │   └── index.ts
-│   └── diarization/      # OpenAI gpt-4o-transcribe-diarize speaker diarization
+│   ├── diarization/      # OpenAI gpt-4o-transcribe-diarize speaker diarization
+│   │   └── index.ts
+│   └── video/            # OpenAI sora-2 video generation
 │       └── index.ts
 ├── google/
 │   ├── image/            # Gemini gemini-3-pro-image-preview image generation
@@ -47,7 +51,9 @@ hello-gen-ai/
 │   │   └── index.ts
 │   ├── diarization/      # Gemini gemini-3-flash-preview speaker diarization
 │   │   └── index.ts
-│   └── tts/              # Gemini gemini-2.5-flash-preview-tts text-to-speech
+│   ├── tts/              # Gemini gemini-2.5-flash-preview-tts text-to-speech
+│   │   └── index.ts
+│   └── video/            # Google veo-3.1-generate-preview video generation
 │       └── index.ts
 └── package.json          # Workspace root
 ```
@@ -62,5 +68,5 @@ hello-gen-ai/
 
 ## Environment Variables
 
-- `OPENAI_API_KEY` - Required for OpenAI packages (image, transcription, diarization)
-- `GOOGLE_API_KEY` - Required for Google Gemini packages (image, transcription, diarization, tts)
+- `OPENAI_API_KEY` - Required for OpenAI packages (image, transcription, diarization, video)
+- `GOOGLE_API_KEY` - Required for Google Gemini packages (image, transcription, diarization, tts, video)
