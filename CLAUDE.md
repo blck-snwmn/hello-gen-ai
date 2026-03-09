@@ -53,7 +53,7 @@ hello-gen-ai/
 │   └── video/            # OpenAI sora-2 video generation
 │       └── index.ts
 ├── google/
-│   ├── image/            # Gemini gemini-3-pro-image-preview image generation
+│   ├── image/            # Gemini image generation (pro / flash / Nano Banana 2)
 │   │   └── index.ts
 │   ├── transcription/    # Gemini gemini-3-flash-preview speech-to-text (SRT)
 │   │   └── index.ts

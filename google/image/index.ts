@@ -1,16 +1,26 @@
 import { GoogleGenAI } from "@google/genai";
 
+const modelAliases: Record<string, string> = {
+  pro: "gemini-3-pro-image-preview",
+  "nanobana-pro": "gemini-3-pro-image-preview",
+  flash: "gemini-3.1-flash-image-preview",
+  "nanobana-2": "gemini-3.1-flash-image-preview",
+};
+
+const arg = process.argv[2];
+const model = arg ? (modelAliases[arg] ?? arg) : "gemini-3-pro-image-preview";
+
 const ai = new GoogleGenAI({});
 
 const prompt = await Bun.file("input/prompt.txt").text();
 const imageBuffer = await Bun.file("input/banana.jpeg").bytes();
 const base64Image = Buffer.from(imageBuffer).toString("base64");
 
-console.log("Generating image with gemini-3-pro-image-preview...");
+console.log(`Generating image with ${model}...`);
 console.log(`Prompt: ${prompt.slice(0, 100)}...`);
 
 const response = await ai.models.generateContent({
-  model: "gemini-3-pro-image-preview",
+  model,
   contents: [
     { text: prompt },
     {
