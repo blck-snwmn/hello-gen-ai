@@ -1,0 +1,16 @@
+{
+  "name": "google-embedding",
+  "private": true,
+  "type": "module",
+  "module": "index.ts",
+  "dependencies": {
+    "@google/genai": "^1.34.0",
+    "@lancedb/lancedb": "^0.26.2"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

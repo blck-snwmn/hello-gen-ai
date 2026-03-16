@@ -1,0 +1,7 @@
+# Input files (images, audio, video, sample texts)
+input/*
+!input/.gitkeep
+
+# Output (generated DB)
+output/*
+!output/.gitkeep

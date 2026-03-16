@@ -26,6 +26,8 @@ bun run google/transcription/index.ts
 bun run google/diarization/index.ts
 bun run google/tts/index.ts
 bun run google/video/index.ts
+bun run google/embedding/index.ts <files...>   # embedding → DB保存
+bun run google/embedding/search.ts "<query>"   # 類似検索
 
 # Run tests
 bun test
@@ -61,8 +63,11 @@ hello-gen-ai/
 │   │   └── index.ts
 │   ├── tts/              # Gemini gemini-2.5-flash-preview-tts text-to-speech
 │   │   └── index.ts
-│   └── video/            # Google veo-3.1-generate-preview video generation
-│       └── index.ts
+│   ├── video/            # Google veo-3.1-generate-preview video generation
+│   │   └── index.ts
+│   └── embedding/        # Gemini gemini-embedding-2-preview multimodal embedding + similarity search
+│       ├── index.ts      # embed files → DB
+│       └── search.ts     # similarity search
 └── package.json          # Workspace root
 ```
 
@@ -77,4 +82,4 @@ hello-gen-ai/
 ## Environment Variables
 
 - `OPENAI_API_KEY` - Required for OpenAI packages (image, transcription, diarization, video)
-- `GOOGLE_API_KEY` - Required for Google Gemini packages (image, transcription, diarization, tts, video)
+- `GOOGLE_API_KEY` - Required for Google Gemini packages (image, transcription, diarization, tts, video, embedding)

@@ -15,3 +15,4 @@ Bun monorepo for multi-modal AI experiments.
 | [openai/video](./openai/video) | Video generation | sora-2 |
 | [google/tts](./google/tts) | Text-to-speech (WAV) | gemini-2.5-flash-preview-tts |
 | [google/video](./google/video) | Video generation | veo-3.1-generate-preview |
+| [google/embedding](./google/embedding) | Multimodal embedding + similarity search | gemini-embedding-2-preview |
