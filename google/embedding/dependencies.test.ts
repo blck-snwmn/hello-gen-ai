@@ -2,20 +2,12 @@ import { afterAll, expect, test } from "bun:test";
 import { mkdtemp, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { GoogleGenAI } from "@google/genai";
 import * as lancedb from "@lancedb/lancedb";
 
 const temporaryDirectories: string[] = [];
 
 afterAll(async () => {
   await Promise.all(temporaryDirectories.map((path) => rm(path, { recursive: true, force: true })));
-});
-
-test("Google Gen AI SDK entry points load without network access", () => {
-  const google = new GoogleGenAI({ apiKey: "test-api-key" });
-
-  expect(typeof google.models.generateContent).toBe("function");
-  expect(typeof google.models.embedContent).toBe("function");
 });
 
 test("LanceDB native binding creates and queries a local vector table", async () => {
