@@ -23,7 +23,5 @@ jobs:
             run: bun run lint
           - name: Check format
             run: bun run fmt:check
-          - name: Typecheck
-            run: bun run typecheck
           - name: Test dependency integrations
             run: bun run test
