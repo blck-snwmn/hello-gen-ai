@@ -4,7 +4,7 @@
   "type": "module",
   "module": "index.ts",
   "dependencies": {
-    "@google/genai": "2.19.0",
+    "@google/genai": "2.20.0",
     "@lancedb/lancedb": "0.38.0"
   },
   "devDependencies": {
